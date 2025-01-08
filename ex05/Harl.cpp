@@ -1,0 +1,38 @@
+#include "Harl.hpp"
+
+Harl::Harl() {}
+
+Harl::~Harl() {}
+
+void Harl::debug(void) {
+    std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << std::endl;
+}
+
+void Harl::info(void) {
+    std::cout << "I cannot believe adding extra bacon costs more money. You didn't put enough bacon in my burger! If you did, I wouldn't be asking for more!" << std::endl;
+}
+
+void Harl::warning(void) {
+    std::cout << "I think I deserve to have some extra bacon for free. I've been coming for years whereas you started working here since last month." << std::endl;
+}
+
+void Harl::error(void) {
+    std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+}
+
+const Harl::LevelMap Harl::levelMap[] = {
+    {"DEBUG", &Harl::debug},
+    {"INFO", &Harl::info},
+    {"WARNING", &Harl::warning},
+    {"ERROR", &Harl::error}
+};
+
+void Harl::complain(std::string level) {
+    for (const auto& entry : levelMap) {
+        if (entry.level == level) {
+            (this->*(entry.function))();
+            return;
+        }
+    }
+    std::cerr << "Unknown level: " << level << std::endl;
+}
