@@ -9,13 +9,14 @@ int main(int argc, char **argv)
         std::string filename = argv[1];
         std::string s1 = argv[2];
         std::string s2 = argv[3];
-        std::ifstream ifs(filename);
+        std::ifstream ifs(filename.c_str());
         if (!ifs)
         {
             std::cerr << "Error: could not open file." << std::endl;
             return 1;
         }
-        std::ofstream ofs(filename + ".replace");
+        std::string outFilename = filename + ".replace";
+        std::ofstream ofs(outFilename.c_str());        
         if (!ofs)
         {
             std::cerr << "Error: could not create file." << std::endl;

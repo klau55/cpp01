@@ -28,9 +28,9 @@ const Harl::LevelMap Harl::levelMap[] = {
 };
 
 void Harl::complain(std::string level) {
-    for (const auto& entry : levelMap) {
-        if (entry.level == level) {
-            (this->*(entry.function))();
+    for (int i = 0; i < 4; i++) {
+        if (levelMap[i].level == level) {
+            (this->*(levelMap[i].function))();
             return;
         }
     }

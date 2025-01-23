@@ -15,10 +15,10 @@ $(TARGET): $(OBJ)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	del /Q $(OBJ)
+	rm -f  $(OBJ)
 
 fclean: clean
-	del /Q $(TARGET)
+	rm -f  $(TARGET)
 
 re: fclean all
 
