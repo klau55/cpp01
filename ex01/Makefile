@@ -1,7 +1,7 @@
 # Variables
 CXX = g++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp Zombie.cpp Zombie.hpp zombieHorde.cpp
+CXXFLAGS = -Wall -Wextra -Werror -std=c++11
+SRCS = main.cpp Zombie.cpp zombieHorde.cpp
 OBJS = $(SRCS:.cpp=.o)
 TARGET = ex01
 
