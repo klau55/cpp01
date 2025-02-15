@@ -1,6 +1,6 @@
 # Variables
 CXX = g++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++11
 SRCS = main.cpp Harl.cpp
 OBJS = $(SRCS:.cpp=.o)
 TARGET = harl

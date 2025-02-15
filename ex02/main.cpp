@@ -3,8 +3,8 @@
 int main ()
 {
     std::string string = "HI THIS IS BRAIN";
-    std::string *stringPTR = &string;
-    std::string &stringREF = string;
+    std::string* stringPTR = &string;
+    std::string& stringREF = string;
 
     std::cout << "Address of string: " << &string << std::endl;
     std::cout << "Address of stringPTR: " << stringPTR << std::endl;
